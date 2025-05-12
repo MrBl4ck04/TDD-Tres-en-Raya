@@ -12,6 +12,6 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("¡Bienvenido al juego de Tres en Raya!!!! Prueba\n");
-        System.out.println("Próximamente estará disponible la versión completa.");
+        System.out.println("Próximamente estará disponible la versión completa. <3");
     }
 }
