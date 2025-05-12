@@ -12,6 +12,7 @@ Este proyecto consiste en la implementación de un juego de Tres en Raya (Tic-Ta
 - Implementar pruebas unitarias efectivas
 - Desarrollar un juego de Tres en Raya funcional por consola
 - Configurar integración continua mediante GitHub Actions
+- Documentar el proceso de desarrollo y las decisiones tomadas
 
 ## Metodología TDD
 
@@ -81,8 +82,17 @@ mvn test
 mvn exec:java -Dexec.mainClass="com.tictactoe.Main"
 ```
 
+## Evaluación
+
+El proyecto será evaluado según los siguientes criterios:
+
+- Descripción de las pruebas unitarias planteadas
+- Repositorio público con múltiples commits y ejecuciones de pruebas
+- Implementación de GitHub Actions para pruebas automáticas
+- Comparación con una solución alternativa generada por IA
+
 ## Equipo
 
-- [Daniela Guzmán]
-- [Jhulianna Tarqui]
-- [Franz Carvajal]
+- [Nombre del Miembro 1]
+- [Nombre del Miembro 2]
+- [Nombre del Miembro 3]
