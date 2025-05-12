@@ -63,12 +63,6 @@ El desarrollo se dividirá entre los 3 miembros del equipo:
 - Implementación de la interfaz de consola y lógica de victoria
 - Pruebas unitarias para la validación de condiciones de victoria
 
-## Requisitos
-
-- Java 11 o superior
-- Maven 3.6 o superior
-- JUnit 5 para pruebas unitarias
-
 ## Instrucciones de Ejecución
 
 ```bash
@@ -93,6 +87,6 @@ El proyecto será evaluado según los siguientes criterios:
 
 ## Equipo
 
-- [Nombre del Miembro 1]
-- [Nombre del Miembro 2]
-- [Nombre del Miembro 3]
+- Daniela Guzman
+- Jhulianna Tarqui
+- Franz Carvajal
