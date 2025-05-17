@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import com.tictactoe.controller.Game;
 import com.tictactoe.model.Board;
-import com.tictactoe.model.Player;
 import com.tictactoe.model.ConsolePlayer;
+import com.tictactoe.model.Player;
 /**
  * Clase principal que inicia el juego de Tres en Raya
  */
