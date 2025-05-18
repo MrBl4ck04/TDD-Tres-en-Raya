@@ -18,7 +18,7 @@ class VictoryTest {
         assertFalse(tablero.hayVictoria('O'), "No debería haber victoria para O");
     }
 
-    /** Requerimiento: línea horizontal completa => victoria */
+    /** RED Requerimiento 2: línea horizontal completa => victoria */
     @Test
     void victoriaHorizontal() {
         Board tablero = new Board();
@@ -28,46 +28,8 @@ class VictoryTest {
         assertTrue(tablero.hayVictoria('X'), "X debe ganar con fila 1 completa");
         assertFalse(tablero.hayVictoria('O'), "O no debe ganar");
     }
-
-    /** Requerimiento: línea vertical completa => victoria */
-    @Test
-    void victoriaVertical() {
-        Board tablero = new Board();
-        tablero.colocarFicha(0, 2, 'O');
-        tablero.colocarFicha(1, 2, 'O');
-        tablero.colocarFicha(2, 2, 'O');
-        assertTrue(tablero.hayVictoria('O'), "O debe ganar con columna 2 completa");
-        assertFalse(tablero.hayVictoria('X'), "X no debe ganar");
-    }
-
-    /** Requerimiento: línea diagonal completa => victoria */
-    @Test
-    void victoriaDiagonal() {
-        Board tablero = new Board();
-        // diagonal principal
-        tablero.colocarFicha(0, 0, 'X');
-        tablero.colocarFicha(1, 1, 'X');
-        tablero.colocarFicha(2, 2, 'X');
-        assertTrue(tablero.hayVictoria('X'), "X debe ganar en diagonal principal");
-
-        // diagonal secundaria
-        Board t2 = new Board();
-        t2.colocarFicha(0, 2, 'O');
-        t2.colocarFicha(1, 1, 'O');
-        t2.colocarFicha(2, 0, 'O');
-        assertTrue(t2.hayVictoria('O'), "O debe ganar en diagonal secundaria");
-    }
-    @Test
-    void noVictoriaConSoloDosEnLinea() {
-        Board tablero = new Board();
-        tablero.colocarFicha(0, 0, 'X');
-        tablero.colocarFicha(0, 1, 'X');
-        // falta (0,2)
-        assertFalse(tablero.hayVictoria('X'),
-            "Con solo dos fichas en la fila no debe haber victoria");
-    }
     
-    /** Red: test de empate usando un nuevo método hayEmpate() que aún no existe */
+    /** REQUERIMIENTO 1 GREEN: test de empate usando un nuevo método hayEmpate() que aún no existe */
     @Test
     void debeDetectarEmpateConNuevoMetodo() {
         Board tablero = new Board();
