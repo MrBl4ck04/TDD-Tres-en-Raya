@@ -79,18 +79,12 @@ public class Board {
     }
     
     /**
-     * R3 Requerimiento 4 : comprueba ambas diagonales de forma concisa en una sola expresión.
+     * Refactor  R3- Requerimiento 4: refactor usando el helper checkLine para ambas diagonales.
      */
     private boolean hayVictoriaEnDiagonales(char mark) {
-        boolean principal = esFichaIgual(0, 0, mark)
-                         && esFichaIgual(1, 1, mark)
-                         && esFichaIgual(2, 2, mark);
-        boolean secundaria = esFichaIgual(0, 2, mark)
-                          && esFichaIgual(1, 1, mark)
-                          && esFichaIgual(2, 0, mark);
-        return principal || secundaria;
+        return checkLine(0, 0, 1, 1, 2, 2, mark)  // diagonal principal
+            || checkLine(0, 2, 1, 1, 2, 0, mark); // diagonal secundaria
     }
-
 
     private boolean esFichaIgual(int fila, int columna, char mark) {
         return cells[fila][columna] != null
