@@ -52,17 +52,19 @@ public class Board {
     }
 
     // ——— Métodos auxiliares de victoria ———
-
+    /**
+     * Refactor  R3: Reutiliza el helper checkLine para evitar repetir esFichaIgual
+     */
     private boolean hayVictoriaEnFilas(char mark) {
         for (int i = 0; i < SIZE; i++) {
-            if (esFichaIgual(i, 0, mark)
-             && esFichaIgual(i, 1, mark)
-             && esFichaIgual(i, 2, mark)) {
+            // Reutiliza el helper checkLine para evitar repetir esFichaIgual
+            if (checkLine(i, 0, i, 1, i, 2, mark)) {
                 return true;
             }
         }
         return false;
     }
+
 
     private boolean hayVictoriaEnColumnas(char mark) {
         for (int j = 0; j < SIZE; j++) {
@@ -110,6 +112,14 @@ public class Board {
                 String.format("Coordenadas (%d,%d) fuera de rango", fila, columna)
             );
         }
+    }
+    private boolean checkLine(int r1, int c1,
+                            int r2, int c2,
+                            int r3, int c3,
+                            char mark) {
+        return cells[r1][c1] != null && cells[r1][c1] == mark
+            && cells[r2][c2] != null && cells[r2][c2] == mark
+            && cells[r3][c3] != null && cells[r3][c3] == mark;
     }
 
     @Override

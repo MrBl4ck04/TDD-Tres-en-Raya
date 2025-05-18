@@ -18,7 +18,7 @@ class VictoryTest {
         assertFalse(tablero.hayVictoria('O'), "No debería haber victoria para O");
     }
 
-    /** RED Requerimiento 2: línea horizontal completa => victoria */
+    /** GREEN Requerimiento 2: línea horizontal completa => victoria */
     @Test
     void victoriaHorizontal() {
         Board tablero = new Board();
