@@ -38,7 +38,7 @@ class VictoryTest {
         assertTrue(tablero.hayVictoria('O'), "O debe ganar con columna 2 completa");
         assertFalse(tablero.hayVictoria('X'), "X no debe ganar");
     }
-    /** RED REQUERIMIENTO 4: línea diagonal completa => victoria */
+    /** GREEN REQUERIMIENTO 4: línea diagonal completa => victoria */
     @Test
     void victoriaDiagonal() {
         Board tablero = new Board();

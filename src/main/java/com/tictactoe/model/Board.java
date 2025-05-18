@@ -48,7 +48,7 @@ public class Board {
     public boolean hayVictoria(char mark) {
         return hayVictoriaEnFilas(mark)
             || hayVictoriaEnColumnas(mark)
-            ;
+            || hayVictoriaEnDiagonales(mark);
     }
 
     // ——— Métodos auxiliares de victoria ———
@@ -78,6 +78,18 @@ public class Board {
         return false;
     }
     
+    /**
+     * R3 Requerimiento 4 : comprueba ambas diagonales de forma concisa en una sola expresión.
+     */
+    private boolean hayVictoriaEnDiagonales(char mark) {
+        boolean principal = esFichaIgual(0, 0, mark)
+                         && esFichaIgual(1, 1, mark)
+                         && esFichaIgual(2, 2, mark);
+        boolean secundaria = esFichaIgual(0, 2, mark)
+                          && esFichaIgual(1, 1, mark)
+                          && esFichaIgual(2, 0, mark);
+        return principal || secundaria;
+    }
 
 
     private boolean esFichaIgual(int fila, int columna, char mark) {
