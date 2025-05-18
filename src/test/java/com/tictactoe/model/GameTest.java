@@ -14,14 +14,13 @@ public class GameTest {
 
     @Test
     public void primerTurnoSiempreEsX() {
-        // 1. Preparación de la prueba
+        
         Board board = new Board();
         Player p1 = new ConsolePlayer('O', null);
         Player p2 = new ConsolePlayer('X', null);
         Game game = new Game(board, p1, p2);
-        //2. Logica de la prueba
 
-        //3. Verificación o Assert
+        //verifica que el primer turno sea de 'X'
         assertEquals('X', game.getCurrentMark(), "El primer turno debe ser de 'X'");
     }
     @Test
@@ -40,6 +39,28 @@ public class GameTest {
 
         // Verifica que el siguiente turno sea de O
         assertEquals('O', game.getCurrentMark(), "Después de 'X', debe jugar 'O'");
+    }
+
+    @Test
+    public void despuesDeOJuegaX() {
+        // Simula entrada de usuario para X y para O
+        String input = "0 1\n";//input para O
+        String input2 = "0 0\n";//input para X
+        Scanner scanner = new java.util.Scanner(input);
+        Scanner scanner2 = new java.util.Scanner(input2);
+
+        Board board = new Board();
+        Player p1 = new ConsolePlayer('O', scanner); // O jugara un turno en (0,1)
+        Player p2 = new ConsolePlayer('X', scanner2); // X jugara un turno en (0,0)
+        Game game = new Game(board, p1, p2);
+
+        // X juega su turno (usando el input simulado)
+        game.step();
+        // O juega su turno (usando el input simulado)
+        game.step();
+
+        // Verifica que el siguiente turno sea de X
+        assertEquals('X', game.getCurrentMark(), "Después de 'O', debe jugar 'X'");
     }
 
 }
