@@ -47,7 +47,7 @@ public class Board {
      */
     public boolean hayVictoria(char mark) {
         return hayVictoriaEnFilas(mark)
-            || hayVictoriaEnColumnas(mark)
+       
             || hayVictoriaEnDiagonales(mark);
     }
 
@@ -66,16 +66,6 @@ public class Board {
     }
 
 
-    private boolean hayVictoriaEnColumnas(char mark) {
-        for (int j = 0; j < SIZE; j++) {
-            if (esFichaIgual(0, j, mark)
-             && esFichaIgual(1, j, mark)
-             && esFichaIgual(2, j, mark)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     /**
      * Refactor  R3: comprueba ambas diagonales de forma concisa en una sola expresión.

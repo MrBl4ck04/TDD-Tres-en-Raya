@@ -18,7 +18,7 @@ class VictoryTest {
         assertFalse(tablero.hayVictoria('O'), "No debería haber victoria para O");
     }
 
-    /** GREEN Requerimiento 2: línea horizontal completa => victoria */
+    /** REQUERIMIENTO 2: línea horizontal completa => victoria */
     @Test
     void victoriaHorizontal() {
         Board tablero = new Board();
@@ -28,8 +28,17 @@ class VictoryTest {
         assertTrue(tablero.hayVictoria('X'), "X debe ganar con fila 1 completa");
         assertFalse(tablero.hayVictoria('O'), "O no debe ganar");
     }
-    
-    /** REQUERIMIENTO 1 GREEN: test de empate usando un nuevo método hayEmpate() que aún no existe */
+    /** RED REQUERIMIENTO 3: línea vertical completa => victoria */
+    @Test
+    void victoriaVertical() {
+        Board tablero = new Board();
+        tablero.colocarFicha(0, 2, 'O');
+        tablero.colocarFicha(1, 2, 'O');
+        tablero.colocarFicha(2, 2, 'O');
+        assertTrue(tablero.hayVictoria('O'), "O debe ganar con columna 2 completa");
+        assertFalse(tablero.hayVictoria('X'), "X no debe ganar");
+    }
+    /** REQUERIMIENTO 1: test de empate usando un nuevo método hayEmpate() que aún no existe */
     @Test
     void debeDetectarEmpateConNuevoMetodo() {
         Board tablero = new Board();
