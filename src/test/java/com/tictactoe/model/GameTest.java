@@ -6,12 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Scanner;
 
 import com.tictactoe.controller.Game;
-import com.tictactoe.model.Board;
-import com.tictactoe.model.ConsolePlayer;
-import com.tictactoe.model.Player;
 
 public class GameTest {
+//Pruebas para el requerimiento 2
+//Debe existir una forma de determinar qué jugador juega después
 
+    // Prueba 1: El primer turno siempre es de 'X'
     @Test
     public void primerTurnoSiempreEsX() {
         
@@ -23,6 +23,7 @@ public class GameTest {
         //verifica que el primer turno sea de 'X'
         assertEquals('X', game.getCurrentMark(), "El primer turno debe ser de 'X'");
     }
+     // Prueba 2: Después de 'X' juega 'O'
     @Test
     public void despuesDeXJuegaO() {
         // Simula entrada de usuario para X: fila 0, columna 0
@@ -40,7 +41,7 @@ public class GameTest {
         // Verifica que el siguiente turno sea de O
         assertEquals('O', game.getCurrentMark(), "Después de 'X', debe jugar 'O'");
     }
-
+    // Prueba 3: Después de 'O' juega 'X'
     @Test
     public void despuesDeOJuegaX() {
         // Simula entrada de usuario para X y para O
