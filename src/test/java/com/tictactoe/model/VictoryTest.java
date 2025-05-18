@@ -55,7 +55,7 @@ class VictoryTest {
         t2.colocarFicha(2, 0, 'O');
         assertTrue(t2.hayVictoria('O'), "O debe ganar en diagonal secundaria");
     }
-    /** REQUERIMIENTO 1: test de empate usando un nuevo método hayEmpate() que aún no existe */
+    /** REQUERIMIENTO 1: test de empate usando un nuevo método hayEmpate()  */
     @Test
     void debeDetectarEmpateConNuevoMetodo() {
         Board tablero = new Board();
@@ -72,7 +72,6 @@ class VictoryTest {
             }
         }
 
-        // Ahora esperamos que exista un método hayEmpate()
         assertTrue(tablero.hayEmpate(),
             "Cuando está lleno y no hay victoria debe devolver empate");
     }
