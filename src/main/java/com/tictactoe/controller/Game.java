@@ -31,7 +31,7 @@ public class Game {
     /** Aplica un turno completo: move + cambio de turno */
     public void step() {
         playTurn();
-        
+        current = p1;
     }
 
     /** ¿Se terminó el juego? */
