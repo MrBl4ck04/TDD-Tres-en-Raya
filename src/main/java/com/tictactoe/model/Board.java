@@ -53,7 +53,7 @@ public class Board {
 
     // ——— Métodos auxiliares de victoria ———
     /**
-     * Refactor  R3: Reutiliza el helper checkLine para evitar repetir esFichaIgual
+     * Refactor  R3- Requerimiento 2: Reutiliza el helper checkLine para evitar repetir esFichaIgual
      */
     private boolean hayVictoriaEnFilas(char mark) {
         for (int i = 0; i < SIZE; i++) {
@@ -65,20 +65,21 @@ public class Board {
         return false;
     }
 
-
+    /**
+     * Refactor  R3- Requerimiento 3: Reutiliza el helper checkLine para evitar repetir esFichaIgual
+     */
     private boolean hayVictoriaEnColumnas(char mark) {
         for (int j = 0; j < SIZE; j++) {
-            if (esFichaIgual(0, j, mark)
-             && esFichaIgual(1, j, mark)
-             && esFichaIgual(2, j, mark)) {
+            // Usa el helper checkLine para simplificar la comparación
+            if (checkLine(0, j, 1, j, 2, j, mark)) {
                 return true;
             }
         }
         return false;
     }
-
+    
     /**
-     * Refactor  R3: comprueba ambas diagonales de forma concisa en una sola expresión.
+     * Refactor  R3 : comprueba ambas diagonales de forma concisa en una sola expresión.
      */
     private boolean hayVictoriaEnDiagonales(char mark) {
         boolean principal = esFichaIgual(0, 0, mark)
