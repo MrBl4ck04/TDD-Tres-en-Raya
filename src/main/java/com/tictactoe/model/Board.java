@@ -95,6 +95,15 @@ public class Board {
         return cells[fila][columna] != null
             && cells[fila][columna] == mark;
     }
+    /**
+     * Devuelve true si el tablero está lleno y no hay victoria de X ni de O.
+     */
+    public boolean hayEmpate() {
+        // aprovecha los métodos ya existentes
+        return estaLleno() 
+            && !hayVictoria('X') 
+            && !hayVictoria('O');
+    }
 
     // ——— Validación de coordenadas ———
 
