@@ -14,11 +14,7 @@ public class Game {
         this.p2      = p2;
         this.current = p1;
         // El primer turno siempre es para el jugador con marca 'X'
-        if (p1.getMark() == 'X') {
-            this.current = p1;
-        } else{
-            this.current = p2;
-        } 
+        this.current = (p1.getMark() == 'X') ? p1 : (p2.getMark() == 'X' ? p2 : p1);
     }
 
     /** Juega un turno: pide movimiento, lo coloca, cambia jugador. */
