@@ -31,9 +31,7 @@ public class Game {
     /** Aplica un turno completo: move + cambio de turno */
     public void step() {
         playTurn();
-        if (!isOver()) {
-            current = (current == p1 ? p2 : p1);
-        }
+        
     }
 
     /** ¿Se terminó el juego? */
