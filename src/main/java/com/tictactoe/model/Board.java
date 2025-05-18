@@ -75,21 +75,19 @@ public class Board {
         return false;
     }
 
+    /**
+     * Refactor  R3: comprueba ambas diagonales de forma concisa en una sola expresión.
+     */
     private boolean hayVictoriaEnDiagonales(char mark) {
-        // Diagonal principal
-        if (esFichaIgual(0, 0, mark)
-         && esFichaIgual(1, 1, mark)
-         && esFichaIgual(2, 2, mark)) {
-            return true;
-        }
-        // Diagonal secundaria
-        if (esFichaIgual(0, 2, mark)
-         && esFichaIgual(1, 1, mark)
-         && esFichaIgual(2, 0, mark)) {
-            return true;
-        }
-        return false;
+        boolean principal = esFichaIgual(0, 0, mark)
+                         && esFichaIgual(1, 1, mark)
+                         && esFichaIgual(2, 2, mark);
+        boolean secundaria = esFichaIgual(0, 2, mark)
+                          && esFichaIgual(1, 1, mark)
+                          && esFichaIgual(2, 0, mark);
+        return principal || secundaria;
     }
+
 
     private boolean esFichaIgual(int fila, int columna, char mark) {
         return cells[fila][columna] != null
@@ -99,7 +97,6 @@ public class Board {
      * Devuelve true si el tablero está lleno y no hay victoria de X ni de O.
      */
     public boolean hayEmpate() {
-        // aprovecha los métodos ya existentes
         return estaLleno() 
             && !hayVictoria('X') 
             && !hayVictoria('O');
