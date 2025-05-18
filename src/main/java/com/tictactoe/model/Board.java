@@ -46,13 +46,23 @@ public class Board {
      * Comprueba si el jugador con ficha 'mark' ha ganado.
      */
     public boolean hayVictoria(char mark) {
-        return hayVictoriaEnColumnas(mark)
+        return hayVictoriaEnFilas(mark)
+            || hayVictoriaEnColumnas(mark)
             || hayVictoriaEnDiagonales(mark);
     }
 
     // ——— Métodos auxiliares de victoria ———
 
-   
+    private boolean hayVictoriaEnFilas(char mark) {
+        for (int i = 0; i < SIZE; i++) {
+            if (esFichaIgual(i, 0, mark)
+             && esFichaIgual(i, 1, mark)
+             && esFichaIgual(i, 2, mark)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private boolean hayVictoriaEnColumnas(char mark) {
         for (int j = 0; j < SIZE; j++) {
