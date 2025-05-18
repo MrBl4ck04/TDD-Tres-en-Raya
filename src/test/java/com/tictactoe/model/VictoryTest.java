@@ -5,8 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class VictoryTest {
+    /** TODAS LAS PRUEBAS PARA EL REQUERIMIENTO 3
+     * Un jugador gana si es el primero en conectar una linea de un lado a otro, o de
+    una esquina a otra
+    */
 
-    /** Requerimiento: si no hay línea completa, no hay victoria */
+    /** PRUEBA 1: si no hay línea completa, no hay victoria */
     @Test
     void noHayVictoriaEnTableroVacioNiParcial() {
         Board tablero = new Board();
@@ -18,7 +22,7 @@ class VictoryTest {
         assertFalse(tablero.hayVictoria('O'), "No debería haber victoria para O");
     }
 
-    /** REQUERIMIENTO 2: línea horizontal completa => victoria */
+    /** PRUEBA 2: línea horizontal completa => victoria */
     @Test
     void victoriaHorizontal() {
         Board tablero = new Board();
@@ -28,7 +32,7 @@ class VictoryTest {
         assertTrue(tablero.hayVictoria('X'), "X debe ganar con fila 1 completa");
         assertFalse(tablero.hayVictoria('O'), "O no debe ganar");
     }
-    /** REQUERIMIENTO 3: línea vertical completa => victoria */
+    /** PRUEBA 3: línea vertical completa => victoria */
     @Test
     void victoriaVertical() {
         Board tablero = new Board();
@@ -38,7 +42,7 @@ class VictoryTest {
         assertTrue(tablero.hayVictoria('O'), "O debe ganar con columna 2 completa");
         assertFalse(tablero.hayVictoria('X'), "X no debe ganar");
     }
-    /** REQUERIMIENTO 4: línea diagonal completa => victoria */
+    /** PRUEBA 4: línea diagonal completa => victoria */
     @Test
     void victoriaDiagonal() {
         Board tablero = new Board();
@@ -55,7 +59,7 @@ class VictoryTest {
         t2.colocarFicha(2, 0, 'O');
         assertTrue(t2.hayVictoria('O'), "O debe ganar en diagonal secundaria");
     }
-    /** REQUERIMIENTO 1: test de empate usando un nuevo método hayEmpate()  */
+    /** PRUEBA 1: test de empate usando un nuevo método hayEmpate()  */
     @Test
     void debeDetectarEmpateConNuevoMetodo() {
         Board tablero = new Board();

@@ -53,7 +53,7 @@ public class Board {
 
     // ——— Métodos auxiliares de victoria ———
     /**
-     * R3- Requerimiento 2: Reutiliza el helper checkLine para evitar repetir esFichaIgual
+     * R3- Prueba 2: Refactor reutiliza el helper checkLine para evitar repetir esFichaIgual
      */
     private boolean hayVictoriaEnFilas(char mark) {
         for (int i = 0; i < SIZE; i++) {
@@ -66,7 +66,7 @@ public class Board {
     }
 
     /**
-     * R3- Requerimiento 3: Reutiliza el helper checkLine para evitar repetir esFichaIgual
+     * R3-  Prueba  3: Refactor reutiliza el helper checkLine para evitar repetir esFichaIgual
      */
     private boolean hayVictoriaEnColumnas(char mark) {
         for (int j = 0; j < SIZE; j++) {
@@ -79,7 +79,7 @@ public class Board {
     }
     
     /**
-     * R3- Requerimiento 4: refactor usando el helper checkLine para ambas diagonales.
+     * R3-  Prueba  4: Refactor usando el helper checkLine para ambas diagonales.
      */
     private boolean hayVictoriaEnDiagonales(char mark) {
         return checkLine(0, 0, 1, 1, 2, 2, mark)  // diagonal principal
@@ -91,7 +91,7 @@ public class Board {
             && cells[fila][columna] == mark;
     }
     /**
-     * R3- Requerimiento 1 :Devuelve true si el tablero está lleno y no hay victoria de X ni de O.
+     * R3-  Prueba  1 : Refactor devuelve true si el tablero está lleno y no hay victoria de X ni de O.
      */
     public boolean hayEmpate() {
         return estaLleno() 
