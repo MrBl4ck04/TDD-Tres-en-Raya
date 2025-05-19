@@ -121,13 +121,19 @@ public class Board {
                 && cells[r3][c3] != null && cells[r3][c3] == mark;
     }
 
-    /**
-     * public void colocarPieza(int x, int y, char pieza) {
-     * if (x < 0 || x > 2) {
-     * throw new IllegalArgumentException("[!] Posición X fuera del tablero");
-     * }
-     * }
-     */
+    public void colocarPieza(int x, int y, char pieza) {
+        if (x < 0 || x > 2) {
+            throw new IllegalArgumentException("Posición X fuera del tablero");
+        }
+
+        if (y < 0 || y > 2) {
+            throw new IllegalArgumentException("Posición Y fuera del tablero");
+        }
+
+        // Ahora colocamos la pieza en el tablero
+        cells[y][x] = pieza;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
