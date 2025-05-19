@@ -20,4 +20,20 @@ public class BoardTest {
         String mensajeActual = exception.getMessage();
         assertTrue(mensajeActual.contains(mensajeEsperado));
     }
+    
+    @Test
+    public void testPiezaFueraDeEjeY() {
+        // Arrange
+        Board tablero = new Board();
+        char pieza = 'X';
+        
+        // Act & Assert
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            tablero.colocarPieza(0, 3, pieza);
+        });
+        
+        String mensajeEsperado = "Posición Y fuera del tablero";
+        String mensajeActual = exception.getMessage();
+        assertTrue(mensajeActual.contains(mensajeEsperado));
+    }
 }

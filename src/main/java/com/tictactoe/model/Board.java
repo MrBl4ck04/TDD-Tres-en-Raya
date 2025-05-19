@@ -121,12 +121,13 @@ public class Board {
                 && cells[r3][c3] != null && cells[r3][c3] == mark;
     }
 
-    public void colocarPieza(int x, int y, char pieza) {
-        if (x < 0 || x > 2) {
-            throw new IllegalArgumentException("[!] Posición X fuera del tablero");
-        }
-    }
-
+    /**
+     * public void colocarPieza(int x, int y, char pieza) {
+     * if (x < 0 || x > 2) {
+     * throw new IllegalArgumentException("[!] Posición X fuera del tablero");
+     * }
+     * }
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
