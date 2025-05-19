@@ -130,7 +130,11 @@ public class Board {
             throw new IllegalArgumentException("Posición Y fuera del tablero");
         }
 
-        // Ahora colocamos la pieza en el tablero
+        if (cells[y][x] != null) {
+            throw new IllegalArgumentException("Posición ya ocupada");
+        }
+
+        // Colocamos la pieza en el tablero
         cells[y][x] = pieza;
     }
 
