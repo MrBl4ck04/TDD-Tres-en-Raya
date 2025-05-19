@@ -33,36 +33,13 @@ src/
 │       └── com/
 │           └── tictactoe/
 │               ├── model/
-│               ├── view/
 │               └── controller/
 └── test/
     └── java/
         └── com/
             └── tictactoe/
                 ├── model/
-                ├── view/
-                └── controller/
 ```
-
-## Plan de Trabajo
-
-El desarrollo se dividirá entre los 3 miembros del equipo:
-
-### Miembro 1
-
-- Implementación del tablero y lógica básica del juego
-- Pruebas unitarias para la validación del estado del tablero
-
-### Miembro 2
-
-- Implementación de la lógica de jugadores y turnos
-- Pruebas unitarias para la validación de movimientos y turnos
-
-### Miembro 3
-
-- Implementación de la interfaz de consola y lógica de victoria
-- Pruebas unitarias para la validación de condiciones de victoria
-
 ## Instrucciones de Ejecución
 
 ```bash
@@ -75,15 +52,6 @@ mvn test
 # Ejecutar la aplicación
 mvn exec:java -Dexec.mainClass="com.tictactoe.Main"
 ```
-
-## Evaluación
-
-El proyecto será evaluado según los siguientes criterios:
-
-- Descripción de las pruebas unitarias planteadas
-- Repositorio público con múltiples commits y ejecuciones de pruebas
-- Implementación de GitHub Actions para pruebas automáticas
-- Comparación con una solución alternativa generada por IA
 
 ## Equipo
 
