@@ -121,21 +121,48 @@ public class Board {
                 && cells[r3][c3] != null && cells[r3][c3] == mark;
     }
 
+    /**
+     * R1: Una pieza puede estar colocada en un espacio de un tablero 3x3
+     * Coloca una pieza en el tablero validando que las coordenadas sean válidas
+     * y que la casilla no esté ocupada.
+     */
     public void colocarPieza(int x, int y, char pieza) {
-        if (x < 0 || x > 2) {
-            throw new IllegalArgumentException("Posición X fuera del tablero");
-        }
+        validarPosicionX(x);
+        validarPosicionY(y);
+        validarCasillaVacia(x, y);
 
-        if (y < 0 || y > 2) {
-            throw new IllegalArgumentException("Posición Y fuera del tablero");
-        }
-
-        if (cells[y][x] != null) {
-            throw new IllegalArgumentException("Posición ya ocupada");
-        }
-
-        // Colocamos la pieza en el tablero
+        // Ahora colocamos la pieza en el tablero
         cells[y][x] = pieza;
+    }
+
+    /**
+     * Requerimiento 1 - Prueba 1: Validación de posición en eje X
+     * Verifica que la coordenada X esté dentro del rango válido (0-2)
+     */
+    private void validarPosicionX(int x) {
+        if (x < 0 || x > 2) {
+            throw new IllegalArgumentException("[!] Posición X fuera del tablero");
+        }
+    }
+
+    /**
+     * Requerimiento 1 - Prueba 2: Validación de posición en eje Y
+     * Verifica que la coordenada Y esté dentro del rango válido (0-2)
+     */
+    private void validarPosicionY(int y) {
+        if (y < 0 || y > 2) {
+            throw new IllegalArgumentException("[!] Posición Y fuera del tablero");
+        }
+    }
+
+    /**
+     * Requerimiento 1 - Prueba 3: Validación de casilla ocupada
+     * Verifica que la casilla no esté ocupada antes de colocar una pieza
+     */
+    private void validarCasillaVacia(int x, int y) {
+        if (cells[y][x] != null) {
+            throw new IllegalArgumentException("[!] Posición ya ocupada");
+        }
     }
 
     @Override
