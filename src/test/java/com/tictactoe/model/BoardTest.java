@@ -36,4 +36,24 @@ public class BoardTest {
         String mensajeActual = exception.getMessage();
         assertTrue(mensajeActual.contains(mensajeEsperado));
     }
+    
+    @Test
+    public void testPiezaEnLugarOcupado() {
+        // Arrange
+        Board tablero = new Board();
+        char pieza1 = 'X';
+        char pieza2 = 'O';
+        
+        // Act
+        tablero.colocarPieza(1, 1, pieza1);
+        
+        // Assert
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            tablero.colocarPieza(1, 1, pieza2);
+        });
+        
+        String mensajeEsperado = "Posición ya ocupada";
+        String mensajeActual = exception.getMessage();
+        assertTrue(mensajeActual.contains(mensajeEsperado));
+    }
 }
