@@ -47,13 +47,14 @@ public class Board {
      */
     public boolean hayVictoria(char mark) {
         return hayVictoriaEnFilas(mark)
-            || hayVictoriaEnColumnas(mark)
-            || hayVictoriaEnDiagonales(mark);
+                || hayVictoriaEnColumnas(mark)
+                || hayVictoriaEnDiagonales(mark);
     }
 
     // ——— Métodos auxiliares de victoria ———
     /**
-     * R3- Prueba 2: Refactor reutiliza el helper checkLine para evitar repetir esFichaIgual
+     * R3- Prueba 2: Refactor reutiliza el helper checkLine para evitar repetir
+     * esFichaIgual
      */
     private boolean hayVictoriaEnFilas(char mark) {
         for (int i = 0; i < SIZE; i++) {
@@ -66,7 +67,8 @@ public class Board {
     }
 
     /**
-     * R3-  Prueba  3: Refactor reutiliza el helper checkLine para evitar repetir esFichaIgual
+     * R3- Prueba 3: Refactor reutiliza el helper checkLine para evitar repetir
+     * esFichaIgual
      */
     private boolean hayVictoriaEnColumnas(char mark) {
         for (int j = 0; j < SIZE; j++) {
@@ -77,26 +79,28 @@ public class Board {
         }
         return false;
     }
-    
+
     /**
-     * R3-  Prueba  4: Refactor usando el helper checkLine para ambas diagonales.
+     * R3- Prueba 4: Refactor usando el helper checkLine para ambas diagonales.
      */
     private boolean hayVictoriaEnDiagonales(char mark) {
-        return checkLine(0, 0, 1, 1, 2, 2, mark)  // diagonal principal
-            || checkLine(0, 2, 1, 1, 2, 0, mark); // diagonal secundaria
+        return checkLine(0, 0, 1, 1, 2, 2, mark) // diagonal principal
+                || checkLine(0, 2, 1, 1, 2, 0, mark); // diagonal secundaria
     }
 
     private boolean esFichaIgual(int fila, int columna, char mark) {
         return cells[fila][columna] != null
-            && cells[fila][columna] == mark;
+                && cells[fila][columna] == mark;
     }
+
     /**
-     * R3-  Prueba  1 : Refactor devuelve true si el tablero está lleno y no hay victoria de X ni de O.
+     * R3- Prueba 1 : Refactor devuelve true si el tablero está lleno y no hay
+     * victoria de X ni de O.
      */
     public boolean hayEmpate() {
-        return estaLleno() 
-            && !hayVictoria('X') 
-            && !hayVictoria('O');
+        return estaLleno()
+                && !hayVictoria('X')
+                && !hayVictoria('O');
     }
 
     // ——— Validación de coordenadas ———
@@ -104,17 +108,23 @@ public class Board {
     private void validarCoordenadas(int fila, int columna) {
         if (fila < 0 || fila >= SIZE || columna < 0 || columna >= SIZE) {
             throw new IllegalArgumentException(
-                String.format("Coordenadas (%d,%d) fuera de rango", fila, columna)
-            );
+                    String.format("Coordenadas (%d,%d) fuera de rango", fila, columna));
         }
     }
+
     private boolean checkLine(int r1, int c1,
-                            int r2, int c2,
-                            int r3, int c3,
-                            char mark) {
+            int r2, int c2,
+            int r3, int c3,
+            char mark) {
         return cells[r1][c1] != null && cells[r1][c1] == mark
-            && cells[r2][c2] != null && cells[r2][c2] == mark
-            && cells[r3][c3] != null && cells[r3][c3] == mark;
+                && cells[r2][c2] != null && cells[r2][c2] == mark
+                && cells[r3][c3] != null && cells[r3][c3] == mark;
+    }
+
+    public void colocarPieza(int x, int y, char pieza) {
+        if (x < 0 || x > 2) {
+            throw new IllegalArgumentException("[!] Posición X fuera del tablero");
+        }
     }
 
     @Override
@@ -130,4 +140,5 @@ public class Board {
         }
         return sb.toString();
     }
+
 }
