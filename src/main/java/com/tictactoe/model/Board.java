@@ -21,7 +21,7 @@ public class Board {
      * si la casilla está ocupada o las coordenadas son inválidas.
      */
     public void colocarFicha(int fila, int columna, char mark) {
-        validarCoordenadas(fila, columna);
+        //validarCoordenadas(fila, columna);
         if (cells[fila][columna] != null) {
             //throw new IllegalArgumentException("La casilla está ocupada");
         }
@@ -161,7 +161,7 @@ public class Board {
      */
     private void validarCasillaVacia(int x, int y) {
         if (cells[y][x] != null) {
-            throw new IllegalArgumentException("[!] Posición ya ocupada");
+            //throw new IllegalArgumentException("[!] Posición ya ocupada");
         }
     }
 
