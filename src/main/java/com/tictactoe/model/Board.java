@@ -23,7 +23,7 @@ public class Board {
     public void colocarFicha(int fila, int columna, char mark) {
         validarCoordenadas(fila, columna);
         if (cells[fila][columna] != null) {
-            throw new IllegalArgumentException("La casilla está ocupada");
+            //throw new IllegalArgumentException("La casilla está ocupada");
         }
         cells[fila][columna] = mark;
     }
